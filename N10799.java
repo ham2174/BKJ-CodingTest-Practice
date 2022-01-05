@@ -1,4 +1,4 @@
-package IO;
+package DP;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -39,52 +39,3 @@ public class N10799 {
     }
  
 }
-
-/*import java.io.*;
-import java.util.*;
-
-public class N10799 {
-    public static void main(String args[]) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        String s = br.readLine();
-        Stack<Point> stack = new Stack();
-        ArrayList<Integer> arr = new ArrayList<>(); // 레이저 배열(닫는 괄호 인덱스)
-        int sum = 0;
-        for(int i = 0 ; i < s.length(); i++){
-            char c = s.charAt(i);
-            if(s.charAt(i) == '('){ //여는 괄호 추가
-                stack.push(new Point(i,c));
-            }else if(s.charAt(i-1) == ')' && s.charAt(i) == ')'){ //스택이 비면 막대기 끝
-                if(!stack.isEmpty()){
-                    int start = stack.pop().idx;
-                    int end = i;
-                    int count = 1;
-                    for(int r : arr){
-                        if(start<r && r < end) count++;
-                    }
-                    sum += count;
-                }else{
-                    sum += arr.size()+1;
-                    arr.clear();
-                }
-            }else if(s.charAt(i) == ')') { //닫는 괄호가 나오면 레이저 배열 추가
-                stack.pop();
-                arr.add(i);
-                if (stack.isEmpty()) arr.clear();
-            }
-        }
-        bw.write(String.valueOf(sum));
-        bw.flush();
-        bw.close();
-    }
-    static class Point{
-        int idx;
-        char p;
-        Point(int idx, char p){
-            this.idx = idx;
-            this.p = p;
-        }
-    }
-}
-*/
